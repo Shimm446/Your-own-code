@@ -6,7 +6,19 @@ description:
 '''
 
 def Trivia():
-    print("welcome to trivia questions! ")
+    global useranswer
+    print("welcome to trivia questions!\n--------------------------------- \nYou have three chances to get the answer right.")
+    useranswer = str(input("\nChoose the difficulty level\n-------------\n1-Easy\n2-Medium\n3-Hard\nAnswer:"))
+    match useranswer:
+        case "1":
+            print("easy")
+        case "2":
+            print("medium")
+        case "3":
+            print("hard")
+        case _:
+            print("try again and enter 1, 2 or 3")
+            Trivia()
     
     
     
@@ -30,11 +42,9 @@ def Trivia():
     
     
     
-    
-def main():
-    def trivia()
     
     
     
 if __name__ == "__main__":
     main()
+
