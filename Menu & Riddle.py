@@ -1,9 +1,10 @@
 def main():
     MainMenu()
+    
 
 def MainMenu():
     print("Welcome User!\nPlease enter a number from the list:\n")
-    menuop = str(input("1 - Riddles\n2 - Trivia:\n"))
+    menuop = str(input("1 - Riddles\n2 - Trivia\n"))
     match menuop:
         case "1":
             Riddles()
@@ -23,19 +24,66 @@ def Riddles():
         case "1":
             EasyRiddle()
         case "2":
-            print("reuhiurehgf")
+            MediumRiddle()
         case "3":
-            print("shbgifg")
+            HardRiddle()
         case _:
             print("Enter a number from the list:\n")
             Riddles()
 
+
 def EasyRiddle():
-    askriddle = str(input(riddles[1]))
+    global againridd
+    askriddle = input(riddles[1])
+    if (askriddle == "age" or askriddle == "Age" or askriddle == "Your age" or askriddle == "Your Age" or askriddle == "your age"):
+        print("Correct!")
+        againridd = str(input("Do you want to see another riddle? (y/n)\n"))
+        AgainRiddle(againridd)
+    else:
+        print("Wrong.")
+        againridd = str(input("Do you want to see another riddle? (y/n)\n"))
+        AgainRiddle(againridd)
 
 
+def MediumRiddle():
+    askmed = input(riddles[0])
+    if (askmed == "short" or askmed == "Short" or askmed == "SHORT"):
+        print("Correct!")
+        againridd = str(input("Do you want to see another riddle? (y/n)\n"))
+        AgainRiddle(againridd)
+    else:
+        print("Wrong.")
+        againridd = str(input("Do you want to see another riddle? (y/n)\n"))
+        AgainRiddle(againridd)
 
 
+def HardRiddle():
+    askhard = input(riddles[2])
+    if (askhard == "A Keyboard" or askhard == "a keyboard" or askhard == "keyboard" or askhard == "Keyboard"):
+        print("Correct!")
+        againridd = str(input("Do you want to see another riddle? (y/n)\n"))
+        AgainRiddle(againridd)
+    else:
+        print("Wrong.")
+        againridd = str(input("Do you want to see another riddle? (y/n)\n"))
+        AgainRiddle(againridd)
+
+
+def AgainRiddle(againridd):
+    match againridd:
+        case "Y":
+            return Riddles()
+        case "y":
+            return Riddles()
+        case "N":
+            return MainMenu()
+        case "n":
+            return MainMenu()
+        case _:
+            print("Enter y or n.")
+            AgainRiddle(againridd)
+            
+        
 
 
 
